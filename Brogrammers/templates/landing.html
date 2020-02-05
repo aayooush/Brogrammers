@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+
+{% block log %}
+
+
+<div style="margin-top:15vh">
+  <center>
+  <h1 class="welcome">Welcome {{username}} !</h1>
+  <center>
+<div class="container-fluid">
+  <h2 class="welcome" style="text-align:left">Top recommendations for {{username}}</h2>
+	<div class="row">
+		<div class="col-md-12">
+			<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="0">
+			<!-- Carousel indicators -->
+			<ol class="carousel-indicators">
+				<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+				<li data-target="#myCarousel" data-slide-to="1"></li>
+			</ol>   
+			<!-- Wrapper for carousel items -->
+			<div class="carousel-inner">
+        <div class="item carousel-item active">
+					<div class="row">
+            {% for i in range(4) %}
+            
+            
+            <div class="col-sm-3">
+							<div class="thumb-wrapper">
+								
+								<div class="img-box">
+									<img src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/rhIRbceoE9lR4veEXuwCC2wARtG.jpg" class="img-responsive img-fluid" alt="">									
+								</div>
+								<div class="thumb-content">
+									<h4>Toy Story</h4>									
+								</div>						
+							</div>
+						</div>
+            
+            
+            {% endfor %}
+				</div>
+        </div>
+        <div class="item carousel-item">
+					<div class="row">
+            {% for i in range(6) %}
+            
+            
+            <div class="col-sm-2">
+							<div class="thumb-wrapper">
+								
+								<div class="img-box">
+									<img src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/rhIRbceoE9lR4veEXuwCC2wARtG.jpg" class="img-responsive img-fluid" alt="">									
+								</div>
+								<div class="thumb-content">
+									<h4>Toy Story</h4>									
+								</div>						
+							</div>
+						</div>
+            
+            
+            {% endfor %}
+					</div>
+				</div>
+			</div>
+			<!-- Carousel controls -->
+			<a class="carousel-control left carousel-control-prev" href="#myCarousel" data-slide="prev">
+				<i class="fa fa-angle-left"></i>
+			</a>
+			<a class="carousel-control right carousel-control-next" href="#myCarousel" data-slide="next">
+				<i class="fa fa-angle-right"></i>
+			</a>
+		</div>
+		</div>
+	</div>
+</div>
+
+</div>
+{% endblock log %}
+

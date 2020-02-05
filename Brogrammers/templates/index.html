@@ -1,0 +1,63 @@
+{% extends "base.html" %} 
+
+{% block content1 %}
+
+<div>
+    <form id="upload-file" method="post" enctype="multipart/form-data">
+        <label for="imageUpload" class="upload-label">
+            Choose Image
+        </label>
+        <input type="file" name="image" id="imageUpload" accept=".png, .jpg, .jpeg">
+    </form>
+  </div>
+{% endblock content1 %}
+
+{% block content2 %}
+
+<div>
+    <div class="image-section" style="display:none;">
+        <div class="img-preview">
+            <div id="imagePreview">
+            </div>
+        </div>
+        <div>
+            <button type="button" class="btn btn-primary btn-lg " id="btn-predict">Predict</button>
+        </div>
+    </div>
+
+    <div class="loader" style="display:none;"></div>
+
+</div>
+
+{% endblock content2%}
+
+{% block result  %}
+
+<h1 class="up" id="result">
+    <span> </span>
+</h1>
+
+{% endblock result %}
+
+{% block symptoms  %}
+
+
+<p id='s' class="up bld"></p><br>
+<p id="sym"></p>
+
+{% endblock symptoms %}
+
+{% block triggers  %}
+
+<p id='t' class="up bld"></p><br>
+<p id="tri"></p>
+
+{% endblock triggers %}
+
+{% block precautions  %}
+
+<p id='pr' class="up bld"></p><br>
+<p id="pre"></p>
+
+{% endblock precautions %}
+
