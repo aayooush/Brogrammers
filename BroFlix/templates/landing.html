@@ -1,0 +1,300 @@
+{% extends "base.html" %}
+
+{% block log %}
+
+
+<div style="margin-top:15vh">
+  <center>
+  <h1 class="welcome" style="text-align:left;margin-left:10vh">Welcome User ID - {{username}} ! {{xp}}</h1><br>
+  <center>
+<div class="container-fluid">
+  <br><br><br><h2 class="welcome" style="text-align:center">Top recommendations</h2><br><br><br>
+	<div class="row">
+		<div class="col-md-12">
+			<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="0">
+			<!-- Carousel indicators -->
+			<ol class="carousel-indicators">
+				<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+				<li data-target="#myCarousel" data-slide-to="1"></li>
+			</ol>   
+			<!-- Wrapper for carousel items -->
+			<div class="carousel-inner">
+        <div class="item carousel-item active">
+					<div class="row">
+            {% for i in range(4) %}
+            
+            
+            <div class="col-sm-3">
+							<div class="thumb-wrapper">
+								<a href="/movie?name={{title[i]}}">
+								<div class="img-box">
+									<img src="{{img[i]}}" class="img-responsive img-fluid" alt="">									
+								</div>
+                </a>
+								<div class="thumb-content">
+									<h3>{{title[i]}}</h3>										
+								</div>						
+							</div>
+						</div>
+            
+            
+            {% endfor %}
+				</div>
+        </div>
+        <div class="item carousel-item">
+					<div class="row">
+            {% for i in range(4,8) %}
+            
+            
+            <div class="col-sm-3">
+							<div class="thumb-wrapper">
+								<a href="/movie?name={{title[i]}}">
+								<div class="img-box">
+									<img src="{{img[i]}}" class="img-responsive img-fluid" alt="">									
+								</div>
+                </a>
+								<div class="thumb-content">
+									<h3>{{title[i]}}</h3>									
+								</div>						
+							</div>
+						</div>
+            
+            
+            {% endfor %}
+					</div>
+				</div>
+			</div>
+			<!-- Carousel controls -->
+			<a class="carousel-control left carousel-control-prev" href="#myCarousel" data-slide="prev">
+				<i class="fa fa-angle-left"></i>
+			</a>
+			<a class="carousel-control right carousel-control-next" href="#myCarousel" data-slide="next">
+				<i class="fa fa-angle-right"></i>
+			</a>
+		</div>
+		</div>
+	</div>
+</div>
+
+<!-- SECTION 2 -->
+
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-6">
+      <br><br><br><br><br>
+      <h2 class="welcome" style="text-align:center">{{gen[0]}}</h2>
+		</div>
+    <div class="col-md-6">
+      <br><br><br><br><br>
+      <h2 class="welcome" style="text-align:center">{{gen[1]}}</h2>
+		</div>
+		</div>
+  </div>
+
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-6">
+			<div id="myCarousel2" class="carousel slide" data-ride="carousel" data-interval="0">
+			<!-- Carousel indicators -->
+			<ol class="carousel-indicators">
+				<li data-target="#myCarousel2" data-slide-to="0" class="active"></li>
+				<li data-target="#myCarousel2" data-slide-to="1"></li>
+			</ol>   
+			<!-- Wrapper for carousel items -->
+			<div class="carousel-inner">
+        <div class="item carousel-item active">
+					<div class="row">
+            {% for i in range(2) %}
+            
+            
+            <div class="col-sm-6">
+							<div class="thumb-wrapper">
+								<a href="/movie?name={{gen1[i]}}">
+								<div class="img-box">
+									<img src="{{gimg1[i]}}" class="img-responsive img-fluid" alt="">									
+								</div>
+                </a>
+								<div class="thumb-content">
+									<h4>{{gen1[i]}}</h4>									
+								</div>						
+							</div>
+						</div>
+
+            {% endfor %}
+				</div>
+        </div>
+        <div class="item carousel-item">
+					<div class="row">
+            {% for i in range(2,4) %}
+            
+            
+            <div class="col-sm-6">
+							<div class="thumb-wrapper">
+								<a href="/movie?name={{gen1[i]}}">
+								<div class="img-box">
+									<img src="{{gimg1[i]}}" class="img-responsive img-fluid" alt="">									
+								</div>
+                </a>
+								<div class="thumb-content">
+									<h4>{{gen1[i]}}</h4>									
+								</div>						
+							</div>
+						</div>
+            
+            
+            {% endfor %}
+					</div>
+				</div>
+			</div>
+			<!-- Carousel controls -->
+			<a class="carousel-control left carousel-control-prev" href="#myCarousel2" data-slide="prev">
+				<i class="fa fa-angle-left"></i>
+			</a>
+			<a class="carousel-control right carousel-control-next" href="#myCarousel2" data-slide="next">
+				<i class="fa fa-angle-right"></i>
+			</a>
+		</div>
+		</div> 
+    
+    <div class="col-md-6">
+			<div id="myCarousel3" class="carousel slide" data-ride="carousel" data-interval="0">
+			<!-- Carousel indicators -->
+			<ol class="carousel-indicators">
+				<li data-target="#myCarousel3" data-slide-to="0" class="active"></li>
+				<li data-target="#myCarousel3" data-slide-to="1"></li>
+			</ol>   
+			<!-- Wrapper for carousel items -->
+			<div class="carousel-inner">
+        <div class="item carousel-item active">
+					<div class="row">
+            {% for i in range(2) %}
+            
+            
+            <div class="col-sm-6">
+							<div class="thumb-wrapper">
+								<a href="/movie?name={{gen2[i]}}">
+								<div class="img-box">
+									<img src="{{gimg2[i]}}" class="img-responsive img-fluid" alt="">									
+								</div>
+                </a>
+								<div class="thumb-content">
+									<h4>{{gen2[i]}}</h4>									
+								</div>						
+							</div>
+						</div>
+
+            {% endfor %}
+				</div>
+        </div>
+        <div class="item carousel-item">
+					<div class="row">
+            {% for i in range(2,4) %}
+            
+            
+            <div class="col-sm-6">
+							<div class="thumb-wrapper">
+								<a href="/movie?name={{gen2[i]}}">
+								<div class="img-box">
+									<img src="{{gimg2[i]}}" class="img-responsive img-fluid" alt="">									
+								</div>
+                </a>
+								<div class="thumb-content">
+									<h4>{{gen2[i]}}</h4>									
+								</div>						
+							</div>
+						</div>
+            
+            
+            {% endfor %}
+					</div>
+				</div>
+			</div>
+			<!-- Carousel controls -->
+			<a class="carousel-control left carousel-control-prev" href="#myCarousel3" data-slide="prev">
+				<i class="fa fa-angle-left"></i>
+			</a>
+			<a class="carousel-control right carousel-control-next" href="#myCarousel3" data-slide="next">
+				<i class="fa fa-angle-right"></i>
+			</a>
+		</div>
+		</div> 
+    
+    
+    
+	</div>
+</div>
+
+<!-- SECTION 3 -->
+
+<div class="container-fluid">
+  <br><br><br><h2 class="welcome" style="text-align:center">Top recommendations</h2><br><br><br>
+	<div class="row">
+		<div class="col-md-12">
+			<div id="myCarousel4" class="carousel slide" data-ride="carousel" data-interval="0">
+			<!-- Carousel indicators -->
+			<ol class="carousel-indicators">
+				<li data-target="#myCarousel4" data-slide-to="0" class="active"></li>
+				<li data-target="#myCarousel4" data-slide-to="1"></li>
+			</ol>   
+			<!-- Wrapper for carousel items -->
+			<div class="carousel-inner">
+        <div class="item carousel-item active">
+					<div class="row">
+            {% for i in range(4) %}
+            
+            
+            <div class="col-sm-3">
+							<div class="thumb-wrapper">
+								<a href="/movie?name={{toptit[i]}}">
+								<div class="img-box">
+									<img src="{{topimg[i]}}" class="img-responsive img-fluid" alt="">									
+								</div>
+                </a>
+								<div class="thumb-content">
+									<h3>{{toptit[i]}}</h3>										
+								</div>						
+							</div>
+						</div>
+            
+            
+            {% endfor %}
+				</div>
+        </div>
+        <div class="item carousel-item">
+					<div class="row">
+            {% for i in range(4,8) %}
+            
+            
+            <div class="col-sm-3">
+							<div class="thumb-wrapper">
+								<a href="/movie?name={{toptit[i]}}">
+								<div class="img-box">
+									<img src="{{topimg[i]}}" class="img-responsive img-fluid" alt="">									
+								</div>
+                </a>
+								<div class="thumb-content">
+									<h3>{{toptit[i]}}</h3>									
+								</div>						
+							</div>
+						</div>
+            
+            
+            {% endfor %}
+					</div>
+				</div>
+			</div>
+			<!-- Carousel controls -->
+			<a class="carousel-control left carousel-control-prev" href="#myCarousel4" data-slide="prev">
+				<i class="fa fa-angle-left"></i>
+			</a>
+			<a class="carousel-control right carousel-control-next" href="#myCarousel4" data-slide="next">
+				<i class="fa fa-angle-right"></i>
+			</a>
+		</div>
+		</div>
+	</div>
+</div>
+
+</div>
+{% endblock log %}
+
