@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+
+{% block log %}
+
+<div class="container">
+	<div class="single-movie" style="margin-top:100px">
+<center>
+		<div class="col-sm-12">
+		<img src="{{img}}" style="padding: 58px;border: 1px solid white;height: 400px"><br><br>
+		</div>
+		<div class="col-sm-12">
+				<h1 class="title" style="color:white">{{name}} -- {{yr}}</h1><br>
+		</div>
+		<div class="col-sm-12">
+				<p class="content" style="color:white;font-size:large;" >Ratings :  {{rate}}/100</p><br>
+		</div>
+		<!-- <div class="col-sm-12" style="height:20px">
+			<p><span class="glyphicon glyphicon-star" style="color: white"></span>
+			<span class="glyphicon glyphicon-star" style="color: white"></span>
+			<span class="glyphicon glyphicon-star" style="color: white"></span>
+			<span class="glyphicon glyphicon-star" style="color: white"></span></p>	
+				</div> -->
+
+		<div class="col-sm-12">
+			<p style="color:white;font-size:large;">
+				{{desc}}
+			</p>
+		</div>
+	</center>
+	</div>
+</div>
+<br>
+			
+<div class="container-fluid">
+  <br><br><br><h2 class="welcome" style="text-align:center">Top recommendations</h2><br><br><br>
+	<div class="row">
+		<div class="col-md-12">
+			<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="0">
+			<!-- Carousel indicators -->
+			<ol class="carousel-indicators">
+				<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+				<li data-target="#myCarousel" data-slide-to="1"></li>
+			</ol>   
+			<!-- Wrapper for carousel items -->
+			<div class="carousel-inner">
+        <div class="item carousel-item active">
+					<div class="row">
+            {% for i in range(4) %}
+            
+            
+            <div class="col-sm-3">
+							<div class="thumb-wrapper">
+								<a href="/movie?name={{title[i]}}">
+								<div class="img-box">
+									<img src="{{img1[i]}}" class="img-responsive img-fluid" alt="">									
+								</div>
+                </a>
+								<div class="thumb-content">
+									<h3>{{title[i]}}</h3>										
+								</div>						
+							</div>
+						</div>
+            
+            
+            {% endfor %}
+				</div>
+        </div>
+        <div class="item carousel-item">
+					<div class="row">
+            {% for i in range(4,8) %}
+            
+            
+            <div class="col-sm-3">
+							<div class="thumb-wrapper">
+								<a href="/movie?name={{title[i]}}">
+								<div class="img-box">
+									<img src="{{img1[i]}}" class="img-responsive img-fluid" alt="">									
+								</div>
+                </a>
+								<div class="thumb-content">
+									<h3>{{title[i]}}</h3>									
+								</div>						
+							</div>
+						</div>
+            
+            
+            {% endfor %}
+					</div>
+				</div>
+			</div>
+			<!-- Carousel controls -->
+			<a class="carousel-control left carousel-control-prev" href="#myCarousel" data-slide="prev">
+				<i class="fa fa-angle-left"></i>
+			</a>
+			<a class="carousel-control right carousel-control-next" href="#myCarousel" data-slide="next">
+				<i class="fa fa-angle-right"></i>
+			</a>
+		</div>
+		</div>
+	</div>
+</div>
+			
+			
+{% endblock log %}
